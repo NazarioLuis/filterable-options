@@ -1,6 +1,6 @@
 # \<filterable-options\>
 
-Filterable options based on datalist!
+Filterable options based on datalist! https://www.webcomponents.org/element/NazarioLuis/filterable-options
 
 ## Install the Polymer-CLI
 
