@@ -2,6 +2,13 @@
 
 Filterable options based on datalist! https://www.webcomponents.org/element/NazarioLuis/filterable-options
 
+```html
+<!-- add items="[[items]]" to pass a custom datasource -->
+<filterable-options label="My Label" value="{{value}}" default-placeholder="Select One">
+</filterable-options>
+[[value]]
+```
+
 ## Install the Polymer-CLI
 
 First, make sure you have the [Polymer CLI](https://www.npmjs.com/package/polymer-cli) installed. Then run `polymer serve` to serve your element locally.
