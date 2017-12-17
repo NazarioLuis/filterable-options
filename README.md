@@ -2,19 +2,23 @@
 
 Filterable options based on datalist! https://www.webcomponents.org/element/NazarioLuis/filterable-options
 
-
-<!-- 
+<!---
 ```
-<base href="https://raw-dot-custom-elements.appspot.com/NazarioLuis/filterable-options/de2b9c813966f8136ea9e59ef364c34ff98f7079/filterable-options/">
-<script src="../webcomponentsjs/webcomponents-lite.js"></script>
-<link rel="import" href="filterable-options.html">
-<link rel="import" href="../paper-input/paper-input.html">
+<custom-element-demo>
+  <template>
+    <script src="../webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="filterable-options.html">
+    <link rel="import" href="../paper-input/paper-input.html">
+    <next-code-block></next-code-block>
+  </template>
+</custom-element-demo>
 ```
 -->
 
+
 ```html
 add items="[[items]]" to pass a custom datasource
-<filterable-options label="My Label" default-placeholder="Select">
+<filterable-options label="My Label" default-placeholder="Select One">
 </filterable-options>
 ```
 
