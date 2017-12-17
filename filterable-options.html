@@ -54,6 +54,10 @@
             type:Array,
             value:['item1','item2','item3']
           },
+          defaultPlaceholder: {
+            type: String,
+            value:'Select',
+          },
           value: {
             type: String,
             value:'',
@@ -76,7 +80,7 @@
       }
       getPlaceholder(value){
         if (value == '') {
-          return '--Seleccionar--';
+          return '- - '+this.defaultPlaceholder+' - -';
         }else {
           return value;
         }
