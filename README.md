@@ -18,7 +18,6 @@ Filterable options based on datalist! https://www.webcomponents.org/element/Naza
 <!-- add items="[[items]]" to pass a custom datasource -->
 <filterable-options label="My Label" default-placeholder="Select One">
 </filterable-options>
-[[value]]
 ```
 
 ## Install the Polymer-CLI
