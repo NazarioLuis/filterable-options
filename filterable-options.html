@@ -1,0 +1,88 @@
+<link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="../paper-input/paper-input.html">
+
+<dom-module id="filterable-options">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+      ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+          color:    #909;
+      }
+      :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+         color:    #909;
+         opacity:  1;
+      }
+      ::-moz-placeholder { /* Mozilla Firefox 19+ */
+         color:    #909;
+         opacity:  1;
+      }
+      :-ms-input-placeholder { /* Internet Explorer 10-11 */
+         color:    #909;
+      }
+      ::-ms-input-placeholder { /* Microsoft Edge */
+         color:    #909;
+      }
+
+      ::placeholder { /* Most modern browsers support this now. */
+         color:    #909;
+      }
+    </style>
+    <paper-input-container attr-for-value="value" always-float-label>
+      <label slot="label">[[label]]</label>
+      <input class="paper-input-input" slot="input" list="items" placeholder="[[getPlaceholder(value)]]" value="{{inputValue::input}}">
+      <datalist id="items">
+        <template is="dom-repeat" items="[[items]]" index-as="index">
+          <option value="[[item]]">
+        </template>
+      </datalist>
+    </paper-input-container>
+  </template>
+
+  <script>
+    /**
+     * @customElement
+     * @polymer
+     */
+    class FilterableOptions extends Polymer.Element {
+      static get is() { return 'filterable-options'; }
+      static get properties() {
+        return {
+          label:String,
+          items:{
+            type:Array,
+            value:['item1','item2','item3']
+          },
+          value: {
+            type: String,
+            value:'',
+            notify: true
+          },
+          inputValue: {
+            type: String,
+            observer: '_valueChanged'
+          },
+        }
+      }
+      _valueChanged(){
+        var _this = this;
+        if(this.items.filter(function(val){
+          return _this.inputValue === val;
+        }).length) {
+          _this.set('value',_this.inputValue);
+          _this.set('inputValue','');
+        }
+      }
+      getPlaceholder(value){
+        if (value == '') {
+          return '--Seleccionar--';
+        }else {
+          return value;
+        }
+      }
+    }
+
+    window.customElements.define(FilterableOptions.is, FilterableOptions);
+  </script>
+</dom-module>
